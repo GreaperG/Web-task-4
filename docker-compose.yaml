@@ -6,6 +6,7 @@ services:
             WEB_DOCUMENT_ROOT: /app/public
             WEB_DOCUMENT_INDEX: index.php
             PHP_DISMOD: ioncube
+            DATABASE_URL: "mysql://user:pass@database:3306/symfony_app?serverVersion=8.0&charset=utf8mb4"
         ports:
             -   target: 80
                 published: 8010
