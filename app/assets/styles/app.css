@@ -1,0 +1,11 @@
+body {
+    background-color: white;
+    color: #212529; /* стандартный темный текст */
+}
+.table {
+    background-color: white;
+    color: #212529;
+}
+.table th, .table td {
+    vertical-align: middle;
+}

@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "@symfony/webpack-encore": "^5.3.1",
+    "bootstrap": "^5.3.8"
+  },
+  "dependencies": {
+    "core-js": "^3.47.0",
+    "regenerator-runtime": "^0.14.1"
+  },
+  "scripts": {
+  "dev": "encore dev",
+  "dev-server": "encore dev-server",
+  "build": "encore production"
+}
+}
