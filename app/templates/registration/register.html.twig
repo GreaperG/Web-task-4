@@ -7,7 +7,13 @@
         <h2 class="mb-4 text-center">Create Account</h2>
         <p class="text-center text-muted mb-4">Fill in your details to register</p>
 
-        {{ form_start(registrationForm, {'attr': {'novalidate': 'novalidate'}}) }}
+                {{ form_start(registrationForm, {
+            'attr': {
+                'novalidate': 'novalidate',
+                'data-turbo': 'false',
+                'data-controller': null
+            }
+        }) }}
 
             <div class="mb-3">
                 {{ form_label(registrationForm.name, 'Name', {'label_attr': {'class': 'form-label'}}) }}
@@ -71,12 +77,16 @@
                 {{ form_errors(registrationForm.agreeTerms) }}
             </div>
 
+            <input type="hidden" 
+                   name="{{ registrationForm._token.vars.full_name }}"
+                   value="{{ registrationForm._token.vars.value }}">
+
 
             <div class="d-grid mt-4">
                 <button type="submit" class="btn btn-primary py-2">Register</button>
             </div>
 
-        {{ form_end(registrationForm) }}
+        </form>
 
         <p class="mt-3 text-center">
             <a href="{{ path('app_login') }}">Already have an account? Log in</a>
