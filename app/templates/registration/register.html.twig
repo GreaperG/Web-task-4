@@ -71,9 +71,6 @@
                 {{ form_errors(registrationForm.agreeTerms) }}
             </div>
 
-            {% if not registrationForm._token.rendered %}
-                {{ form_widget(registrationForm._token) }}
-            {% endif %}
 
             <div class="d-grid mt-4">
                 <button type="submit" class="btn btn-primary py-2">Register</button>
