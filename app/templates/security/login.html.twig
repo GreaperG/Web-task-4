@@ -21,8 +21,8 @@
                 <input
                     type="email"
                     value="{{ last_username }}"
-                    name="_username"
-                    id="username"
+                    name="email"
+                    id="inputEmail"
                     class="form-control"
                     placeholder="Email"
                     autocomplete="email"
@@ -48,8 +48,6 @@
                     <i class="fa fa-eye"></i>
                 </span>
             </div>
-
-            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
             <div class="d-grid mt-4">
                 <button class="btn btn-primary py-2" type="submit">
