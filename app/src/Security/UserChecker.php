@@ -20,10 +20,10 @@ class UserChecker implements UserCheckerInterface
         return;
     }
 
-    // Проверка существования в базе
+
     $existingUser = $this->em->getRepository(User::class)->find($user->getId());
     if (!$existingUser) {
-        // Завершаем сессию, чтобы Symfony не пытался обновить пользователя
+
         throw new CustomUserMessageAuthenticationException('Your account no longer exists.');
     }
 
