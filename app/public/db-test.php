@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: text/plain');
 
-// Конфигурация
+
 $config = [
     'host' => 'mysql-ruu2',
     'user' => 'user',
@@ -18,12 +18,11 @@ try {
     );
     
     echo "=== USER TABLE DATA ===\n\n";
-    
-    // 1. Показать количество пользователей
+
     $count = $pdo->query("SELECT COUNT(*) FROM user")->fetchColumn();
     echo "Total users: $count\n\n";
     
-    // 2. Показать всех пользователей
+
     $users = $pdo->query("SELECT * FROM user ORDER BY id DESC LIMIT 10")->fetchAll();
     
     if (empty($users)) {
@@ -44,7 +43,7 @@ try {
         }
     }
     
-    // 3. Показать статистику
+
     echo "\n=== STATISTICS ===\n";
     
     $stats = $pdo->query("
@@ -61,10 +60,10 @@ try {
         echo "Status: {$stat['status']}, Verified: {$stat['is_verified']} -> {$stat['count']} users\n";
     }
     
-    // 4. Пример EXPLAIN запроса (показывает использование индексов)
+
     echo "\n=== INDEX USAGE ANALYSIS ===\n";
     
-    // Проверим как работает поиск по email (должен использовать UNIQUE индекс)
+
     $explain = $pdo->query("EXPLAIN SELECT * FROM user WHERE email = 'test@example.com'")->fetch();
     
     echo "Query: SELECT * FROM user WHERE email = 'test@example.com'\n";
